@@ -4,38 +4,62 @@ var Bees = preload("res://Bees.tscn")
 
 var timer = Timer.new()
 
-const UP = Vector2(0, -1)
-var motion = Vector2()
+export var player_number = 1
 
-func keep():
+var motion = Vector2()
+var UP
+var RIGHT
+var LEFT
+var DOWN
+
+func _ready():
+	
+	if player_number == 1 :
+		UP = "ui_up"
+		RIGHT = "ui_right"
+		DOWN = "ui_down"
+		LEFT = "ui_left"
+	if player_number == 2 :
+		UP = "ui_up_2"
+		RIGHT = "ui_right_2"
+		DOWN = "ui_down_2"
+		LEFT = "ui_left_2"
+
+	timer.connect("timeout",self,"_on_timer_timeout") 
+	add_child(timer) #to process
+	timer.start(0.05) #to start
+
+
+func spawn_bee():
     # "Muzzle" is a Position2D placed at the barrel of the gun.
 	var b = Bees.instance()
 	b.global_position = global_position
+	b.player_number = player_number
 	get_parent().add_child(b)
 
 func _physics_process(delta):
 	if is_on_floor():
 		
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed(UP):
 			motion.y = -250
 			#get_node("AnimationPlayer").play("jump")
 		
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed(RIGHT):
 			motion.x = 120
-		elif Input.is_action_pressed("ui_left"):
+		elif Input.is_action_pressed(LEFT):
 			motion.x = -120
 		else:
 			motion.x = 0
 	else:
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed(UP):
 			motion.y = clamp(motion.y + 10, -250, 250)
 		else:
 			motion.y = clamp(motion.y + 10, -100, 250)
 		
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed(RIGHT):
 			motion.x += 20
 			get_node("Sprite").set_flip_h(true)
-		elif Input.is_action_pressed("ui_left"):
+		elif Input.is_action_pressed(LEFT):
 			motion.x -= 20
 			get_node("Sprite").set_flip_h(false)
 		else:
@@ -44,14 +68,12 @@ func _physics_process(delta):
 		motion.x = clamp(motion.x, -120, 120)
 		
 		
-	motion = move_and_slide(motion, UP)
+	motion = move_and_slide(motion, Vector2(0, -1))
 	
 
-func _ready():
-	timer.connect("timeout",self,"_on_timer_timeout") 
-	add_child(timer) #to process
-	timer.start(0.05) #to start
-
 func _on_timer_timeout():
-	keep()
+	spawn_bee()
 	timer.start(0.05)
+	
+func die():
+	print("dead")
