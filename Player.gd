@@ -14,7 +14,9 @@ var LEFT
 var DOWN
 var floor_timer = 0;
 var dashing = false;
+var post_dashing = false;
 var dash_timer = 0;
+var state = ""
 
 func _ready():
 	
@@ -61,27 +63,61 @@ func _physics_process(delta):
 	motion.y += 10
 	
 	if is_on_floor():
+	
+		if dashing == true:
+			dash_timer = 0
+			post_dashing = true
+			spawn_bullet()
+			dashing = false
+			dash_timer = 0
+			$AnimationPlayer.play("slam")
+		
+		elif post_dashing == true:
+			motion.x =0
+			motion.y =0
+			dash_timer += delta
+			if dash_timer > 0.3:
+				post_dashing = false
+				dash_timer = 0
+	
+		else:
+			if Input.is_action_pressed(RIGHT):
+				
+				motion.x = 120
+				$AnimationPlayer.play("run")
+				get_node("Sprite").set_flip_h(true)
+				state = "walk"
+			
+			elif Input.is_action_pressed(LEFT):
+			
+				motion.x = -120
+				$AnimationPlayer.play("run")
+				get_node("Sprite").set_flip_h(false)
+				state = "walk"
+			
+			else:
+				motion.x = 0
+				if state == "walk":
+					$AnimationPlayer.play("idle")
+
+		
+	
 		floor_timer = 0;
 	
 	floor_timer += delta
 	
 	if floor_timer < 0.1:
-		
-		if Input.is_action_pressed(UP):
-			motion.y = -230
-			get_node("AnimationPlayer").play("jump")
-		
-		if Input.is_action_pressed(RIGHT):
-			motion.x = 120
-		elif Input.is_action_pressed(LEFT):
-			motion.x = -120
-		else:
-			motion.x = 0
+	
 			
-		if dashing == true:
-			spawn_bullet()
-			dashing = false
-			dash_timer = 0
+			
+		if Input.is_action_pressed(UP):
+			
+			motion.y = -230
+			$AnimationPlayer.play("jump")
+
+			
+
+				
 		
 	else:
 		if Input.is_action_pressed(UP):
@@ -98,6 +134,13 @@ func _physics_process(delta):
 		else:
 			motion.x = motion.x * 0.95
 		
+		if (state == "walk" or state == "idle") and motion.y > 0:
+			state = "startfall"
+		
+		if state == "startfall":
+			$AnimationPlayer.play("falling")
+			state = "endfall"
+			
 		if Input.is_action_pressed(DOWN):
 			dashing = true
 		
@@ -105,7 +148,9 @@ func _physics_process(delta):
 			motion.x =0
 			motion.y =0
 			dash_timer += delta
+			$AnimationPlayer.play("charging")
 			if dash_timer > 0.2:
+				$AnimationPlayer.play("slam_fall")
 				motion.x = 0
 				motion.y = 350
 				
