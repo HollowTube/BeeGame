@@ -29,6 +29,7 @@ func _ready():
 	
 	x_towards = rand_range(80, 432)
 	y_towards = rand_range(80, 220)
+	$AnimationPlayer.play("warning")
 
 func _physics_process(delta):
 	pass
