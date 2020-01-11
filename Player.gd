@@ -177,6 +177,8 @@ func _physics_process(delta):
 		
 	motion = move_and_slide(motion, Vector2(0, -1))
 	
+	global_position.x = clamp(global_position.x, 5, 507) 
+	
 func _on_timer_timeout():
 	spawn_bee()
 	timer.start(0.05)
