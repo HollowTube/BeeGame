@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://81765902_577491892889208_7263812041486368768_n.png" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="World" type="Node"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 96, 32 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 96, 96 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource( 2 )
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 160, 96 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor2"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+shape = SubResource( 2 )
+
+[node name="Floor3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 224, 96 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor3"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+shape = SubResource( 2 )
+
+[node name="Floor4" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 288, 96 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor4"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
+shape = SubResource( 2 )
+
+[node name="Floor5" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 352, 96 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor5"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
+shape = SubResource( 2 )
