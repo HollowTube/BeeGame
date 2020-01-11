@@ -40,7 +40,7 @@ percent_visible = 0.0
 text = "text goes here 
 "
 script = ExtResource( 3 )
-file_path = "res://dialogue/text_start.txt"
+file_path = "res://dialogue/text_end.txt"
 
 [node name="anime character" type="TextureRect" parent="."]
 margin_left = 320.0
