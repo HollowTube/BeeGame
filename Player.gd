@@ -79,6 +79,7 @@ func _physics_process(delta):
 		
 	motion = move_and_slide(motion, Vector2(0, -1))
 	
+	
 
 func _on_timer_timeout():
 	spawn_bee()
