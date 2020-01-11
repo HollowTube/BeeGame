@@ -12,6 +12,9 @@ func _ready():
 	#_on_timer_timeout is the callback, can have any name
 	add_child(timer) #to process
 	timer.start(2) #to start
+	
+	if randi()%2 == 0:
+		$Sprite.set_flip_h(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -27,11 +30,9 @@ func _on_timer_timeout():
 
 func _on_ArmArea_body_exited(body):
 	if body.get_name() == "Player" or body.get_name() == "Player2":
-		armed = true
-		if player_number == 1:
-			$Sprite.modulate = Color(1, 0, 0) # red
-		if player_number == 2:
-			$Sprite.modulate = Color(0, 1, 0) # green
+		
+		if player_number == body.player_number:
+			armed = true
 
 
 func _on_Area2D_body_entered(body):

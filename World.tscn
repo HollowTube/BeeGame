@@ -1,97 +1,299 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://Hazards.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/platform.png" type="Texture" id=3]
+[ext_resource path="res://assets/ground.png" type="Texture" id=4]
+[ext_resource path="res://Hazards.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27.3974, 11.7917 )
+extents = Vector2( 27.3974, 4.49124 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 295.296, 18.672 )
+extents = Vector2( 31.9999, 6.10352e-005 )
 
 [node name="World" type="Node"]
 script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 70.1799, 154.446 )
+rotation = -0.0026748
 
 [node name="Player2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 452.174, 185.847 )
+position = Vector2( 452.174, 153.847 )
+rotation = -0.0026748
 player_number = 2
 
-[node name="Floor2" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 71.5957, 219.858 )
+[node name="platform" type="StaticBody2D" parent="."]
+position = Vector2( 64, 192 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Floor2"]
+[node name="Sprite" type="Sprite" parent="platform"]
 position = Vector2( 0, 0.331709 )
-scale = Vector2( 1, 0.346946 )
 texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2( 0, 8 )
 shape = SubResource( 1 )
+one_way_collision = true
 
-[node name="Floor3" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 254.348, 220.521 )
+[node name="platform7" type="StaticBody2D" parent="."]
+position = Vector2( 80, 96 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Floor3"]
-position = Vector2( 0, -0.663414 )
-scale = Vector2( 1, 0.378044 )
+[node name="Sprite" type="Sprite" parent="platform7"]
+position = Vector2( 0, 0.331709 )
 texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform7"]
+position = Vector2( 0, 8 )
 shape = SubResource( 1 )
+one_way_collision = true
 
-[node name="Floor4" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 355.499, 171.428 )
+[node name="platform2" type="StaticBody2D" parent="."]
+position = Vector2( 256, 192 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="Floor4"]
-position = Vector2( 0, 2.32194 )
-scale = Vector2( 1, 0.367678 )
+[node name="Sprite" type="Sprite" parent="platform2"]
+position = Vector2( 0, 0.331709 )
 texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+position = Vector2( 0, 8 )
 shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform6" type="StaticBody2D" parent="."]
+position = Vector2( 256, 96 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="platform6"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform6"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform3" type="StaticBody2D" parent="."]
+position = Vector2( 448, 192 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="platform3"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform8" type="StaticBody2D" parent="."]
+position = Vector2( 432, 96 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="platform8"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform8"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform4" type="StaticBody2D" parent="."]
+position = Vector2( 160, 144 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="platform4"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform4"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform10" type="StaticBody2D" parent="."]
+position = Vector2( 176, 48 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="platform10"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform10"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform5" type="StaticBody2D" parent="."]
+position = Vector2( 352, 144 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="platform5"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform5"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform9" type="StaticBody2D" parent="."]
+position = Vector2( 336, 48 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="platform9"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform9"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2( 32, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 452.787, 219.194 )
-
-[node name="Sprite" type="Sprite" parent="Floor5"]
-position = Vector2( 0.995156, -1.65856 )
-scale = Vector2( 0.865243, 0.409142 )
-texture = ExtResource( 3 )
+position = Vector2( 288, 256 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
-shape = SubResource( 1 )
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
 
-[node name="Floor1" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 170.797, 168.357 )
+[node name="Sprite" type="Sprite" parent="Floor5"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
 
-[node name="Sprite" type="Sprite" parent="Floor1"]
-position = Vector2( -1.03262, 2.07584 )
-scale = Vector2( 0.949341, 0.367678 )
-texture = ExtResource( 3 )
+[node name="Floor3" type="StaticBody2D" parent="."]
+position = Vector2( 160, 256 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1"]
-position = Vector2( -0.786484, 1.49806 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Floor3"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor8" type="StaticBody2D" parent="."]
+position = Vector2( 416, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor8"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Floor8"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2( 96, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Floor2"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
 
 [node name="Floor6" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 242.446, 240.304 )
+position = Vector2( 352, 256 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor6"]
-position = Vector2( 3.31715, 39.1418 )
+position = Vector2( 0, -3 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Floor6"]
-position = Vector2( 4.90659, 41.5495 )
-scale = Vector2( 9.15818, 0.626827 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
 
-[node name="Hazards" parent="." instance=ExtResource( 4 )]
+[node name="Floor4" type="StaticBody2D" parent="."]
+position = Vector2( 224, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Floor4"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor7" type="StaticBody2D" parent="."]
+position = Vector2( 480, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor7"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Floor7"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Hazards" parent="." instance=ExtResource( 5 )]
