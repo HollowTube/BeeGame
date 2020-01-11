@@ -6,7 +6,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for button in $menu/center_row/buttons3.get_children():
+	for button in $menu/center_row/buttons.get_children():
 		if (button.get_name() != "quitbtn"):
 			button.connect("pressed", self, "_on_button_pressed", [button.scene_to_load])
 		else:
