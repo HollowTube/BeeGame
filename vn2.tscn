@@ -9,7 +9,7 @@
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
 
-[node name="beginning" type="Node"]
+[node name="end" type="Node"]
 
 [node name="bg" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -41,7 +41,7 @@ percent_visible = 0.0
 text = "text goes here 
 "
 script = ExtResource( 3 )
-file_path = "res://dialogue/text_start.txt"
+file_path = "res://dialogue/text_end.txt"
 
 [node name="anime character" type="TextureRect" parent="."]
 margin_left = 320.0
@@ -51,7 +51,7 @@ margin_bottom = 300.0
 texture = ExtResource( 4 )
 stretch_mode = 5
 
-[node name="vn1" type="TextureButton" parent="."]
+[node name="vn2" type="TextureButton" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
