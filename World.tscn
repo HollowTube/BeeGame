@@ -13,7 +13,7 @@ extents = Vector2( 32, 32 )
 [node name="World" type="Node"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 128, 192 )
+position = Vector2( 128, 195.783 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -27,7 +27,7 @@ shape = SubResource( 1 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 128, 256 )
+position = Vector2( 128, 259.783 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -40,7 +40,7 @@ shape = SubResource( 2 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 192, 256 )
+position = Vector2( 192, 259.783 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -53,7 +53,7 @@ shape = SubResource( 2 )
 
 [node name="Floor3" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 256, 256 )
+position = Vector2( 256, 259.783 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -66,7 +66,7 @@ shape = SubResource( 2 )
 
 [node name="Floor4" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 320, 256 )
+position = Vector2( 320, 259.783 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -79,7 +79,7 @@ shape = SubResource( 2 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 384, 256 )
+position = Vector2( 384, 259.783 )
 __meta__ = {
 "_edit_group_": true
 }
