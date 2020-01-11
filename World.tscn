@@ -74,7 +74,7 @@ shape = SubResource( 1 )
 
 [node name="Floor5" type="StaticBody2D" parent="World"]
 editor/display_folded = true
-position = Vector2( 376.377, 246.692 )
+position = Vector2( 393.079, 246.692 )
 __meta__ = {
 "_edit_group_": true
 }
