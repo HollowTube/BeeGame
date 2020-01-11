@@ -47,10 +47,10 @@ func _physics_process(delta):
 	
 	floor_timer += delta
 	
-	if floor_timer < 0.2:
+	if floor_timer < 0.1:
 		
 		if Input.is_action_pressed(UP):
-			motion.y = -200
+			motion.y = -230
 			#get_node("AnimationPlayer").play("jump")
 		
 		if Input.is_action_pressed(RIGHT):
