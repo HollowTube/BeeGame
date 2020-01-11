@@ -23,11 +23,13 @@ func _physics_process(delta):
 			motion.y = clamp(motion.y + 10, -100, 250)
 		
 		if Input.is_action_pressed("ui_right"):
-			motion.x += 8
+			motion.x += 20
 		elif Input.is_action_pressed("ui_left"):
-			motion.x -= -8
+			motion.x -= 20
 		else:
-			motion.x = 0
+			motion.x = motion.x * 0.95
+		
+		motion.x = clamp(motion.x, -120, 120)
 		
 		
 	motion = move_and_slide(motion, UP)
