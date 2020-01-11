@@ -11,6 +11,7 @@ var UP
 var RIGHT
 var LEFT
 var DOWN
+var floor_timer = 0;
 
 func _ready():
 	
@@ -38,10 +39,18 @@ func spawn_bee():
 	get_parent().add_child(b)
 
 func _physics_process(delta):
+	
+	motion.y += 10
+	
 	if is_on_floor():
+		floor_timer = 0;
+	
+	floor_timer += delta
+	
+	if floor_timer < 0.2:
 		
 		if Input.is_action_pressed(UP):
-			motion.y = -250
+			motion.y = -200
 			#get_node("AnimationPlayer").play("jump")
 		
 		if Input.is_action_pressed(RIGHT):
@@ -52,9 +61,9 @@ func _physics_process(delta):
 			motion.x = 0
 	else:
 		if Input.is_action_pressed(UP):
-			motion.y = clamp(motion.y + 10, -250, 250)
+			motion.y = clamp(motion.y, -250, 250)
 		else:
-			motion.y = clamp(motion.y + 10, -100, 250)
+			motion.y = clamp(motion.y, -100, 250)
 		
 		if Input.is_action_pressed(RIGHT):
 			motion.x += 20
@@ -76,4 +85,4 @@ func _on_timer_timeout():
 	timer.start(0.05)
 	
 func die():
-	print("dead")
+	get_tree().reload_current_scene()

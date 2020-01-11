@@ -3,10 +3,10 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.3974, 11.7917 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 295.296, 18.672 )
 
 [node name="World" type="Node"]
@@ -27,7 +27,7 @@ scale = Vector2( 1, 0.346946 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Floor3" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -39,7 +39,7 @@ scale = Vector2( 1, 0.378044 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Floor4" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -51,7 +51,7 @@ scale = Vector2( 1, 0.367678 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -63,7 +63,7 @@ scale = Vector2( 0.865243, 0.409142 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Floor1" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -76,7 +76,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1"]
 position = Vector2( -0.786484, 1.49806 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Floor6" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -84,7 +84,7 @@ position = Vector2( 242.446, 240.304 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor6"]
 position = Vector2( 3.31715, 39.1418 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Floor6"]
 position = Vector2( 5.93327, 41.5495 )
