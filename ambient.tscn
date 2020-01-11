@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -180.0
+max_value = 180.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.0603482, 180 ), 0.0, 0.0, 0, 0, Vector2( 0.128262, 136.224 ), 0.0, 0.0, 0, 0, Vector2( 0.146134, -101.376 ), 0.0, 0.0, 0, 0, Vector2( 0.283749, 44.352 ), 0.0, 0.0, 0, 0, Vector2( 0.364173, -177.408 ), 0.0, 0.0, 0, 0, Vector2( 0.521446, 180 ), 0.0, 0.0, 0, 0, Vector2( 0.709103, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.719826, -180 ), 0.0, 0.0, 0, 0, Vector2( 0.878887, 174.24 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+min_value = -40.0
+max_value = 40.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.0871563, 40 ), 0.0, 0.0, 0, 0, Vector2( 0.178304, -24.64 ), 0.0, 0.0, 0, 0, Vector2( 0.323067, 30.976 ), 0.0, 0.0, 0, 0, Vector2( 0.457107, -34.496 ), 0.0, 0.0, 0, 0, Vector2( 0.551829, 30.976 ), 0.0, 0.0, 0, 0, Vector2( 0.62153, -4.224 ), 0.0, 0.0, 0, 0, Vector2( 0.74306, 40 ), 0.0, 0.0, 0, 0, Vector2( 0.814548, -37.312 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 256, 144, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 10, 0 )
+initial_velocity_random = 1.0
+angular_velocity = 1.05
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+tangential_accel_random = 1.0
+tangential_accel_curve = SubResource( 4 )
+angle_random = 1.0
+angle_curve = SubResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 256.265, 67.7322 )
+amount = 80
+lifetime = 10.0
+process_material = SubResource( 5 )
