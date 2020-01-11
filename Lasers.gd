@@ -32,13 +32,13 @@ func _ready():
 	$AnimationPlayer.play("warning")
 
 func _physics_process(delta):
-	pass
+	if armed && $Sprite.modulate.a > 0:
+		$Sprite.modulate.a -= 0.1
 
 func _on_timer_timeout():
 	if warning:
 		armed = true
 		warning = false
-		$Sprite.modulate = Color(1, 0, 1)
 		timer.start(1.25) #shooting duration
 		laserunits.start(0.01)
 	else:
