@@ -42,6 +42,7 @@ func spawn_laser():
 	l.x_vel = (l.x_towards - l.x_ini)/(l.c/l.velocity)
 	l.y_vel = (l.y_towards - l.y_ini)/(l.c/l.velocity)
 	l.ready = true
+	l.get_node("Sprite").rotate(atan(l.y_vel/l.x_vel))
 	
 func _on_timer_timeout():
 	spawn_laser()

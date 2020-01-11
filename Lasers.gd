@@ -1,7 +1,7 @@
 extends Node2D
 
 var armed = false
-var hit = false
+var warning = true
 var ready = false;
 
 var x_ini
@@ -23,10 +23,9 @@ var laserunits = Timer.new()
 func _ready():
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer) #to process
-	timer.start(0.85) #to start
+	timer.start(1) #warning duration
 	laserunits.connect("timeout",self,"_on_laserunits_timeout") 
 	add_child(laserunits) #to process
-	laserunits.start(0.05) #to start
 	
 	x_towards = rand_range(80, 432)
 	y_towards = rand_range(80, 220)
@@ -35,11 +34,12 @@ func _physics_process(delta):
 	pass
 
 func _on_timer_timeout():
-	if !hit:
+	if warning:
 		armed = true
-		hit = true
+		warning = false
 		$Sprite.modulate = Color(1, 0, 1)
-		timer.start(1)
+		timer.start(1.25) #shooting duration
+		laserunits.start(0.01)
 	else:
 		queue_free()
 	
