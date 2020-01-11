@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 var Bees = preload("res://Bees.tscn")
 var Bullet = preload("res://Bullet.tscn")
+var LandingDust = preload("res://LandingDust.tscn")
+
+var air = false
 
 var timer = Timer.new()
 var timer2 = Timer.new()
@@ -47,6 +50,12 @@ func _ready():
 func foo():
 	pass 
 
+func spawn_dust():
+    # "Muzzle" is a Position2D placed at the barrel of the gun.
+	var b = LandingDust.instance()
+	b.global_position = global_position
+	get_parent().add_child(b)
+
 func spawn_bee():
     # "Muzzle" is a Position2D placed at the barrel of the gun.
 	var b = Bees.instance()
@@ -71,6 +80,8 @@ func spawn_bullet():
 
 func _physics_process(delta):
 	
+	
+	
 	motion.y += 10
 	
 	if dead:
@@ -79,6 +90,11 @@ func _physics_process(delta):
 		return
 	
 	if is_on_floor():
+	
+		if air == true:
+			spawn_dust()
+	
+		air = false
 	
 		if dashing == true:
 			dash_timer = 0
@@ -126,7 +142,6 @@ func _physics_process(delta):
 	if floor_timer < 0.1:
 	
 			
-			
 		if Input.is_action_pressed(UP):
 			
 			motion.y = -230
@@ -137,6 +152,7 @@ func _physics_process(delta):
 				
 		
 	else:
+		air = true
 		if Input.is_action_pressed(UP):
 			motion.y = clamp(motion.y, -250, 250)
 		else:
@@ -177,6 +193,8 @@ func _physics_process(delta):
 		
 		
 	motion = move_and_slide(motion, Vector2(0, -1))
+	
+	global_position.x = clamp(global_position.x, 5, 507) 
 	
 func _on_timer_timeout():
 	spawn_bee()
