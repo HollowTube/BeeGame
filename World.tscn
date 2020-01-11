@@ -5,7 +5,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27.3974, 11.7917 )
+extents = Vector2( 27.3974, 1.61292 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 295.296, 18.672 )
@@ -20,7 +20,6 @@ position = Vector2( 452.174, 185.847 )
 player_number = 2
 
 [node name="Floor2" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 71.5957, 219.858 )
 
 [node name="Sprite" type="Sprite" parent="Floor2"]
@@ -29,10 +28,12 @@ scale = Vector2( 1, 0.346946 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2( 0.487671, -8.53432 )
 shape = SubResource( 1 )
+one_way_collision = true
+one_way_collision_margin = 0.0
 
 [node name="Floor3" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 254.348, 220.521 )
 
 [node name="Sprite" type="Sprite" parent="Floor3"]
@@ -41,7 +42,9 @@ scale = Vector2( 1, 0.378044 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+position = Vector2( 0.487732, -7.8028 )
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="Floor4" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -53,10 +56,11 @@ scale = Vector2( 1, 0.367678 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
+position = Vector2( 1.46307, -8.29047 )
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="Floor5" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 452.787, 219.194 )
 
 [node name="Sprite" type="Sprite" parent="Floor5"]
@@ -65,10 +69,11 @@ scale = Vector2( 0.865243, 0.409142 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
+position = Vector2( 0.487671, -13.1672 )
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="Floor1" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 170.797, 168.357 )
 
 [node name="Sprite" type="Sprite" parent="Floor1"]
@@ -77,11 +82,11 @@ scale = Vector2( 0.949341, 0.367678 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1"]
-position = Vector2( -0.786484, 1.49806 )
+position = Vector2( -0.298813, -7.96283 )
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="Floor6" type="StaticBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 242.446, 240.304 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor6"]
