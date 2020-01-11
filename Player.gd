@@ -100,6 +100,7 @@ func _physics_process(delta):
 			dash_timer = 0
 			post_dashing = true
 			spawn_bullet()
+			get_node("../Camera2D").shake()
 			dashing = false
 			dash_timer = 0
 			$AnimationPlayer.play("slam")
@@ -200,15 +201,18 @@ func _on_timer_timeout():
 	timer.start(0.05)
 	
 func _timeout():
-	print("timed out!")
 	dead = false
+	get_tree().paused= false
 	get_tree().reload_current_scene()
 	
 func die():
 	timer2.start(1)
 	deathPosX = global_position.x
 	deathPosY = global_position.y
+	get_node("../Camera2D").zoomIn(global_position)
+	get_tree().paused = true
 	dead = true
+	
 	#Engine.time_scale = 0.1
 	#while(timer2.time_left!=0):
 	#	print(timer2.time_left)
