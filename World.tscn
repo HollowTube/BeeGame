@@ -11,7 +11,7 @@ extents = Vector2( 32, 32 )
 extents = Vector2( 8, 16 )
 
 [node name="Floor" type="StaticBody2D"]
-position = Vector2( 96, 96 )
+position = Vector2( 120.377, 246.692 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -22,7 +22,7 @@ shape = SubResource( 1 )
 [node name="World" type="Node" parent="."]
 
 [node name="Player" type="KinematicBody2D" parent="World"]
-position = Vector2( 324.815, 23.6491 )
+position = Vector2( 124.261, 186.53 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -35,7 +35,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="Floor2" type="StaticBody2D" parent="World"]
-position = Vector2( 160, 96 )
+position = Vector2( 184.377, 246.692 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -48,7 +48,7 @@ shape = SubResource( 1 )
 
 [node name="Floor3" type="StaticBody2D" parent="World"]
 editor/display_folded = true
-position = Vector2( 224, 96 )
+position = Vector2( 248.377, 246.692 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -61,7 +61,7 @@ shape = SubResource( 1 )
 
 [node name="Floor4" type="StaticBody2D" parent="World"]
 editor/display_folded = true
-position = Vector2( 288, 96 )
+position = Vector2( 312.377, 246.692 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -74,7 +74,7 @@ shape = SubResource( 1 )
 
 [node name="Floor5" type="StaticBody2D" parent="World"]
 editor/display_folded = true
-position = Vector2( 352, 96 )
+position = Vector2( 376.377, 246.692 )
 __meta__ = {
 "_edit_group_": true
 }
