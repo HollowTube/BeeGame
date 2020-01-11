@@ -5,7 +5,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 16 )
+extents = Vector2( 5.33398, 11.5307 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 27.3974, 11.7917 )
@@ -16,8 +16,7 @@ extents = Vector2( 295.296, 18.672 )
 [node name="World" type="Node"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 73.1777, 179.896 )
+position = Vector2( 70.1799, 186.446 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -27,10 +26,11 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0, 0.449677 )
 shape = SubResource( 1 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
-position = Vector2( 71.5957, 212.858 )
+position = Vector2( 71.5957, 219.858 )
 
 [node name="Sprite" type="Sprite" parent="Floor2"]
 position = Vector2( 0, 0.331709 )
@@ -41,7 +41,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="Floor3" type="StaticBody2D" parent="."]
-position = Vector2( 254.348, 213.521 )
+position = Vector2( 254.348, 220.521 )
 
 [node name="Sprite" type="Sprite" parent="Floor3"]
 position = Vector2( 0, -0.663414 )
@@ -52,7 +52,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="Floor4" type="StaticBody2D" parent="."]
-position = Vector2( 355.499, 164.428 )
+position = Vector2( 355.499, 171.428 )
 
 [node name="Sprite" type="Sprite" parent="Floor4"]
 position = Vector2( 0, 2.32194 )
@@ -63,7 +63,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
-position = Vector2( 452.787, 212.194 )
+position = Vector2( 452.787, 219.194 )
 
 [node name="Sprite" type="Sprite" parent="Floor5"]
 position = Vector2( 0.995156, -1.65856 )
@@ -74,7 +74,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="Floor1" type="StaticBody2D" parent="."]
-position = Vector2( 170.797, 161.357 )
+position = Vector2( 170.797, 168.357 )
 
 [node name="Sprite" type="Sprite" parent="Floor1"]
 position = Vector2( -1.03262, 2.07584 )
@@ -90,7 +90,6 @@ position = Vector2( 242.446, 240.304 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor6"]
 position = Vector2( 3.31715, 39.1418 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Floor6"]
