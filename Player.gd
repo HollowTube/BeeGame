@@ -4,6 +4,10 @@ var Bees = preload("res://Bees.tscn")
 var Bullet = preload("res://Bullet.tscn")
 
 var timer = Timer.new()
+var timer2 = Timer.new()
+
+var deathPosX
+var deathPosY
 
 export var player_number = 1
 
@@ -13,8 +17,12 @@ var RIGHT
 var LEFT
 var DOWN
 var floor_timer = 0;
+<<<<<<< HEAD
+var dead = false
+=======
 var dashing = false;
 var dash_timer = 0;
+>>>>>>> 208b0096d2bea549314dd8020d626282a261c1fa
 
 func _ready():
 	
@@ -29,10 +37,16 @@ func _ready():
 		DOWN = "ui_down_2"
 		LEFT = "ui_left_2"
 
-	timer.connect("timeout",self,"_on_timer_timeout") 
+
+	timer.connect("timeout",self,"_on_timer_timeout")
+	timer2.connect("timeout",self,"_timeout")
 	add_child(timer) #to process
+	add_child(timer2)
 	timer.start(0.05) #to start
 
+
+func foo():
+	pass 
 
 func spawn_bee():
     # "Muzzle" is a Position2D placed at the barrel of the gun.
@@ -59,6 +73,11 @@ func spawn_bullet():
 func _physics_process(delta):
 	
 	motion.y += 10
+	
+	if dead:
+		global_position.x = deathPosX + randi()%4-2
+		global_position.y = deathPosY + randi()%4-2
+		return
 	
 	if is_on_floor():
 		floor_timer = 0;
@@ -120,5 +139,20 @@ func _on_timer_timeout():
 	spawn_bee()
 	timer.start(0.05)
 	
-func die():
+func _timeout():
+	print("timed out!")
+	dead = false
 	get_tree().reload_current_scene()
+	
+func die():
+	timer2.start(1)
+	deathPosX = global_position.x
+	deathPosY = global_position.y
+	dead = true
+	#Engine.time_scale = 0.1
+	#while(timer2.time_left!=0):
+	#	print(timer2.time_left)
+	#	global_position.x = global_position.x + randi()%2-0.5
+	#	global_position.y = global_position.y + randi()%2-0.5
+	#print(get_node("Sprite"))
+	#get_tree().reload_current_scene()
