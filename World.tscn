@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Hazards.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/background.png" type="Texture" id=6]
 [ext_resource path="res://assets/background_fronttrees.png" type="Texture" id=7]
+[ext_resource path="res://ambient.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.3974, 4.49124 )
@@ -309,3 +310,5 @@ texture = ExtResource( 6 )
 position = Vector2( 256, 112 )
 z_index = -1
 texture = ExtResource( 7 )
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
