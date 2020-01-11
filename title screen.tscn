@@ -7,7 +7,7 @@
 [ext_resource path="res://buttons/quitbtn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/startgame.png" type="Texture" id=6]
 [ext_resource path="res://fonts/startgamehover.png" type="Texture" id=7]
-[ext_resource path="res://buttons/menubtn.gd" type="Script" id=8]
+[ext_resource path="res://buttons/menubtn2.gd" type="Script" id=8]
 [ext_resource path="res://fonts/quitgame.png" type="Texture" id=9]
 [ext_resource path="res://fonts/quitgamehover.png" type="Texture" id=10]
 
