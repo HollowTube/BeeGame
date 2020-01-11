@@ -1,5 +1,10 @@
 extends Node2D
 
+var flower0 = preload("res://assets/flower1.png")
+var flower1 = preload("res://assets/flower2.png")
+var flower2 = preload("res://assets/flower3.png")
+var flower3 = preload("res://assets/flower4.png")
+
 var armed = false
 var hit = false
 var ready = false;
@@ -14,6 +19,17 @@ func _ready():
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer) #to process
 	timer.start(1.5) #to start
+	
+	var flower = randi()%4
+	match flower:
+		0: $Sprite.texture = flower0
+		1: $Sprite.texture = flower1
+		2: $Sprite.texture = flower2
+		3: $Sprite.texture = flower3
+
+	var scale = rand_range(1,5)
+	
+	self.set_scale(Vector2(scale, scale))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -21,8 +37,6 @@ func _ready():
 
 func _physics_process(delta):
 	if ready:
-		if armed:
-			$Sprite.modulate = Color(1, 0, 1)
 		global_position.x = global_position.x + x_vel*delta
 		global_position.y = global_position.y + y_vel*delta
 
