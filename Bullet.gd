@@ -12,7 +12,7 @@ func _ready():
 	#self is who respond to the callback
 	#_on_timer_timeout is the callback, can have any name
 	add_child(timer) #to process
-	timer.start(0.2) #to start
+	timer.start(0.05) #to start
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
