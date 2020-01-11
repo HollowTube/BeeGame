@@ -3,8 +3,8 @@
 [ext_resource path="res://Bees.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 20.0
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 30.9267
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 3.06182, 3.03841 )
@@ -19,7 +19,7 @@ texture = ExtResource( 2 )
 [node name="ArmArea" type="Area2D" parent="."]
 
 [node name="ArmShape" type="CollisionShape2D" parent="ArmArea"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
