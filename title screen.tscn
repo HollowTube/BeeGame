@@ -7,7 +7,7 @@
 [ext_resource path="res://buttons/quitbtn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://fonts/startgame.png" type="Texture" id=6]
 [ext_resource path="res://fonts/startgamehover.png" type="Texture" id=7]
-[ext_resource path="res://buttons/menubtn2.gd" type="Script" id=8]
+[ext_resource path="res://buttons/menubtn.gd" type="Script" id=8]
 [ext_resource path="res://fonts/quitgame.png" type="Texture" id=9]
 [ext_resource path="res://fonts/quitgamehover.png" type="Texture" id=10]
 
@@ -75,7 +75,7 @@ margin_bottom = 92.0
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
 script = ExtResource( 8 )
-scene_to_load = "res://test.tscn"
+scene_to_load = "res://World.tscn"
 
 [node name="quitbtn" type="TextureButton" parent="menu/center_row/buttons3"]
 margin_top = 96.0
