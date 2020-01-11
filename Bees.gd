@@ -2,6 +2,7 @@ extends Node2D
 
 var armed = false
 var player_number = 0
+var fading = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,7 @@ func _ready():
 	#self is who respond to the callback
 	#_on_timer_timeout is the callback, can have any name
 	add_child(timer) #to process
-	timer.start(2) #to start
+	timer.start(1.9) #to start
 	
 	if randi()%2 == 0:
 		$Sprite.set_flip_h(true)
@@ -23,10 +24,17 @@ func _ready():
 func _physics_process(delta):
 	global_position.x = global_position.x + randi()%2-0.5
 	global_position.y = global_position.y + randi()%2-0.5
+	
+	if fading == true:
+		$Sprite.modulate.a -= 0.1
+	
+	if $Sprite.modulate.a <0:
+		queue_free()
+		
 
 
 func _on_timer_timeout():
-   queue_free()
+   fading = true
 
 func _on_ArmArea_body_exited(body):
 	if body.get_name() == "Player" or body.get_name() == "Player2":
