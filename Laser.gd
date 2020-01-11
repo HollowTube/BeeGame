@@ -4,13 +4,6 @@ var armed = false
 var hit = false
 var ready = false;
 
-var x_ini
-var y_ini
-var x_towards
-var y_towards
-
-var velocity = 800
-var c
 var x_vel
 var y_vel
 
@@ -20,9 +13,7 @@ var timer = Timer.new()
 func _ready():
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer) #to process
-	timer.start(1) #to start
-	x_towards = rand_range(50, 462)
-	y_towards = rand_range(50, 250)
+	timer.start(1.5) #to start
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -30,17 +21,13 @@ func _ready():
 
 func _physics_process(delta):
 	if ready:
+		if armed:
+			$Sprite.modulate = Color(1, 0, 1)
 		global_position.x = global_position.x + x_vel*delta
 		global_position.y = global_position.y + y_vel*delta
 
 func _on_timer_timeout():
-	if !hit:
-		armed = true
-		hit = true
-		$Sprite.modulate = Color(1, 0, 1)
-		timer.start(0.5)
-	else:
-		queue_free()
+	queue_free()
 
 func _on_Area2D_body_entered(body):
 	if armed == true and (body.get_name() == "Player" or body.get_name() == "Player2"):

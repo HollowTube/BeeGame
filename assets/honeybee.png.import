@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/char1_sheet.png-ddcee75bcbf7042df253063160f3a946.stex"
+path="res://.import/honeybee.png-27804a75c0bb7943239c8c9902047c7b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/char1_sheet.png"
-dest_files=[ "res://.import/char1_sheet.png-ddcee75bcbf7042df253063160f3a946.stex" ]
+source_file="res://assets/honeybee.png"
+dest_files=[ "res://.import/honeybee.png-27804a75c0bb7943239c8c9902047c7b.stex" ]
 
 [params]
 

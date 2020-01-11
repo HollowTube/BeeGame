@@ -3,7 +3,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var Laser = preload("res://Laser.tscn")
+var Lasers = preload("res://Lasers.tscn")
 var timer = Timer.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -17,7 +17,7 @@ func _ready():
 #	pass
 
 func spawn_laser():
-	var l = Laser.instance()
+	var l = Lasers.instance()
 	get_parent().add_child(l)
 	var side = randi()%4
 	match side:
