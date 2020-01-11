@@ -26,6 +26,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 184.377, 246.692 )
 __meta__ = {
 "_edit_group_": true
@@ -35,6 +36,7 @@ __meta__ = {
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+shape = SubResource( 2 )
 
 [node name="Floor3" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -47,6 +49,7 @@ __meta__ = {
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+shape = SubResource( 2 )
 
 [node name="Floor4" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -59,6 +62,7 @@ __meta__ = {
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
+shape = SubResource( 2 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -74,6 +78,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 2 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 120.377, 246.692 )
 
 [node name="Sprite" type="Sprite" parent="Floor"]
