@@ -24,6 +24,7 @@ extents = Vector2( 31.9999, 6.10352e-005 )
 [node name="Game" type="Node"]
 
 [node name="World" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="Player" parent="World" instance=ExtResource( 2 )]
@@ -458,6 +459,5 @@ position = Vector2( 175.094, 45.8416 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
-editor/display_folded = true
 
 [node name="beginning" parent="CanvasLayer" instance=ExtResource( 12 )]

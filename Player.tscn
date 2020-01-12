@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/char1_sheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.33398, 11.5307 )
+extents = Vector2( 5.33398, 10.4713 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "charging"
@@ -147,7 +147,7 @@ vframes = 8
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 0.449677 )
+position = Vector2( 0, 0.5 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
