@@ -50,9 +50,7 @@ func _ready():
 
 	player = AudioStreamPlayer.new()
 	bgPlayer = AudioStreamPlayer.new()
-	
 
-	
 	add_child(player)
 	add_child(bgPlayer)
 	
@@ -65,7 +63,6 @@ func _ready():
 	add_child(timer) #to process
 	add_child(timer2)
 	timer.start(0.05) #to start
-
 
 func spawn_dust():
     # "Muzzle" is a Position2D placed at the barrel of the gun.
@@ -95,9 +92,6 @@ func spawn_bullet():
 	get_parent().add_child(b)
 
 func _physics_process(delta):
-	
-	
-	
 	motion.y += 10
 	
 	if dead:
@@ -195,19 +189,13 @@ func _physics_process(delta):
 	floor_timer += delta
 	
 	if floor_timer < 0.1:
-	
-			
+
 		if Input.is_action_pressed(UP):
 			player.stream = load("res://grassy1.wav")
 			player.play(0.015)
 			motion.y = -230
 			$AnimationPlayer.play("jump")
-
-
 			
-
-				
-		
 	else:
 		air = true
 		if Input.is_action_pressed(UP):
@@ -272,11 +260,3 @@ func die():
 	get_node("../Camera2D").zoomIn(global_position)
 	get_tree().paused = true
 	dead = true
-	
-	#Engine.time_scale = 0.1
-	#while(timer2.time_left!=0):
-	#	print(timer2.time_left)
-	#	global_position.x = global_position.x + randi()%2-0.5
-	#	global_position.y = global_position.y + randi()%2-0.5
-	#print(get_node("Sprite"))
-	#get_tree().reload_current_scene()
