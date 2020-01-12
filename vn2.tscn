@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://end_text.gd" type="Script" id=1]
 [ext_resource path="res://fonts/pixelmix.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://text_scroll.gd" type="Script" id=3]
 [ext_resource path="res://assets/char1_portrait2.png" type="Texture" id=4]
 [ext_resource path="res://vn.gd" type="Script" id=5]
+[ext_resource path="res://fonts/retry.png" type="Texture" id=6]
+[ext_resource path="res://fonts/retryhover.png" type="Texture" id=7]
+[ext_resource path="res://TextureButton.gd" type="Script" id=8]
+[ext_resource path="res://fonts/quitgame2.png" type="Texture" id=9]
+[ext_resource path="res://fonts/quitgame2hover.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -52,3 +57,23 @@ stretch_mode = 5
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 224.0
+margin_top = 96.0
+margin_right = 288.0
+margin_bottom = 136.0
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+script = ExtResource( 8 )
+scene_to_load = "res://game.tscn"
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 352.0
+margin_top = 96.0
+margin_right = 463.0
+margin_bottom = 136.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+script = ExtResource( 8 )
+scene_to_load = "res://title_screen.tscn"
