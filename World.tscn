@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -9,12 +9,15 @@
 [ext_resource path="res://assets/background.png" type="Texture" id=7]
 [ext_resource path="res://assets/background_fronttrees.png" type="Texture" id=8]
 [ext_resource path="res://ambient.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Grass.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.3974, 4.49124 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 31.9999, 6.10352e-005 )
+
+[sub_resource type="RectangleShape2D" id=3]
 
 [node name="World" type="Node"]
 script = ExtResource( 1 )
@@ -31,6 +34,7 @@ rotation = -0.0026748
 player_number = 2
 
 [node name="platform" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 64, 192 )
 rotation = -0.0026748
 __meta__ = {
@@ -47,6 +51,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform7" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 80, 96 )
 rotation = -0.0026748
 __meta__ = {
@@ -63,6 +68,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 256, 192 )
 rotation = -0.0026748
 __meta__ = {
@@ -79,6 +85,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform6" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 256, 96 )
 rotation = -0.0026748
 __meta__ = {
@@ -95,6 +102,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform3" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 448, 192 )
 rotation = -0.0026748
 __meta__ = {
@@ -111,6 +119,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform8" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 432, 96 )
 rotation = -0.0026748
 __meta__ = {
@@ -127,6 +136,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform4" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 160, 144 )
 rotation = -0.0026748
 __meta__ = {
@@ -143,6 +153,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform10" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 176, 48 )
 rotation = -0.0026748
 __meta__ = {
@@ -159,6 +170,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform5" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 352, 144 )
 rotation = -0.0026748
 __meta__ = {
@@ -175,6 +187,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="platform9" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 336, 48 )
 rotation = -0.0026748
 __meta__ = {
@@ -191,7 +204,9 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="Floor" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 32, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -205,7 +220,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor9" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( -30, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -219,7 +236,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor10" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 540, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -233,7 +252,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor5" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 288, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -247,7 +268,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor3" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 160, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -261,7 +284,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor8" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 416, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -275,7 +300,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 96, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -289,7 +316,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor6" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 352, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -303,7 +332,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor4" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 224, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -317,7 +348,9 @@ texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
 [node name="Floor7" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 480, 256 )
+z_index = 2
 __meta__ = {
 "_edit_group_": true
 }
@@ -366,3 +399,52 @@ z_index = -1
 texture = ExtResource( 8 )
 
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
+
+[node name="grass" type="StaticBody2D" parent="."]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass"]
+shape = SubResource( 3 )
+disabled = true
+
+[node name="grass" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 120, 246.277 )
+
+[node name="grass2" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 304, 246.277 )
+
+[node name="grass3" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 257.005, 246.277 )
+
+[node name="grass4" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 238.612, 246.277 )
+
+[node name="grass5" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 348.689, 45.8416 )
+
+[node name="grass6" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 144, 142.402 )
+
+[node name="grass7" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 400, 246.277 )
+
+[node name="grass8" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 492.553, 246.277 )
+
+[node name="grass9" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 433.544, 92.6585 )
+
+[node name="grass10" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 72, 92.6585 )
+
+[node name="grass11" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 72, 246.277 )
+
+[node name="grass12" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 176, 142.402 )
+
+[node name="grass13" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 336.774, 142.402 )
+
+[node name="grass14" parent="grass" instance=ExtResource( 10 )]
+position = Vector2( 175.094, 45.8416 )
