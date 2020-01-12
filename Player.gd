@@ -32,6 +32,8 @@ var guiding = false;
 var post_guiding = false;
 var dash_timer = 0;
 var state = ""
+var player;
+var bgPlayer;
 
 func _ready():
 	
@@ -46,16 +48,24 @@ func _ready():
 		DOWN = "ui_down_2"
 		LEFT = "ui_left_2"
 
+	player = AudioStreamPlayer.new()
+	bgPlayer = AudioStreamPlayer.new()
+	
 
+	
+	add_child(player)
+	add_child(bgPlayer)
+	
+	bgPlayer.stream = load("res://FlightOfTheBumbleBees.wav")
+	bgPlayer.volume_db = -8
+	bgPlayer.play()
+	
 	timer.connect("timeout",self,"_on_timer_timeout")
 	timer2.connect("timeout",self,"_timeout")
 	add_child(timer) #to process
 	add_child(timer2)
 	timer.start(0.05) #to start
 
-
-func foo():
-	pass 
 
 func spawn_dust():
     # "Muzzle" is a Position2D placed at the barrel of the gun.
@@ -98,6 +108,8 @@ func _physics_process(delta):
 	if is_on_floor():
 	
 		if air == true:
+			#player.stream = load("res://grassy2.wav")
+			#player.play()
 			spawn_dust()
 	
 		air = false
@@ -106,7 +118,13 @@ func _physics_process(delta):
 			dash_timer = 0
 			post_dashing = true
 			spawn_bullet()
+			
 			get_node("../Camera2D").shake()
+			
+			player.stream = load("res://explosion1.wav")
+			player.volume_db = -10
+			player.play()
+			
 			dashing = false
 			dash_timer = 0
 			$AnimationPlayer.play("slam")
@@ -180,9 +198,11 @@ func _physics_process(delta):
 	
 			
 		if Input.is_action_pressed(UP):
-			
+			player.stream = load("res://grassy1.wav")
+			player.play(0.015)
 			motion.y = -230
 			$AnimationPlayer.play("jump")
+
 
 			
 
@@ -243,7 +263,10 @@ func _timeout():
 	get_tree().reload_current_scene()
 	
 func die():
-	timer2.start(1)
+	timer2.start(1.5)
+	player.stream = load("res://Busted.wav")
+	
+	player.play()
 	deathPosX = global_position.x
 	deathPosY = global_position.y
 	get_node("../Camera2D").zoomIn(global_position)

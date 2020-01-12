@@ -28,6 +28,19 @@ window/size/fullscreen=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[importer_defaults]
+
+wav={
+"compress/mode": 0,
+"edit/loop": false,
+"edit/normalize": true,
+"edit/trim": true,
+"force/8_bit": false,
+"force/max_rate": false,
+"force/max_rate_hz": 44100,
+"force/mono": false
+}
+
 [input]
 
 ui_up_2={

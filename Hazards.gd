@@ -5,12 +5,16 @@ extends Node2D
 # var b = "text"
 var Lasers = preload("res://Lasers.tscn")
 var timer = Timer.new()
+var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer.connect("timeout",self,"_on_timer_timeout")
 	add_child(timer) #to process
 	timer.start(6) #to start
+	
+	player = AudioStreamPlayer.new()
+	add_child(player)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -45,5 +49,9 @@ func spawn_laser():
 	l.get_node("Sprite").rotate(atan(l.y_vel/l.x_vel))
 	
 func _on_timer_timeout():
+	player.stream = load("res://gust.wav")
+
+	player.volume_db = 5
+	player.play(2.5)
 	spawn_laser()
 	timer.start(6)

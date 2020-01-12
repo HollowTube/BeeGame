@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FlightOfTheBumbleBees.wav-c970d3bd307162684c75e436d4ee5a30.sample"
+
+[deps]
+
+source_file="res://FlightOfTheBumbleBees.wav"
+dest_files=[ "res://.import/FlightOfTheBumbleBees.wav-c970d3bd307162684c75e436d4ee5a30.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
