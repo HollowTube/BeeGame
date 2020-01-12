@@ -29,9 +29,17 @@ func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
 			if area.get_parent().direction == "left":
 				get_node("Sprite").set_flip_h(true)
 			$AnimationPlayer.play("grass")
-#		if "Bird" in area.get_parent().get_name():
-#			if area.get_parent().direction == "right":
-#				get_node("Sprite").set_flip_h(false)
-#			if area.get_parent().direction == "left":
-#				get_node("Sprite").set_flip_h(true)
-#			$AnimationPlayer.play("grass")
+		if "Bird" in area.get_parent().get_name():
+			print(area.get_parent().rotation)
+			var rotation = area.get_parent().rotation - area.get_parent().rotation/(2*PI)
+			if rotation > 0:
+				if rotation < (PI/2) || rotation > (3*PI/2):
+					get_node("Sprite").set_flip_h(false)
+				else:
+					get_node("Sprite").set_flip_h(true)
+			if rotation < 0:
+				if rotation > (-PI/2) || rotation < (-3*PI/2):
+					get_node("Sprite").set_flip_h(false)
+				else:
+					get_node("Sprite").set_flip_h(true)
+			$AnimationPlayer.play("grass")
