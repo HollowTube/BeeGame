@@ -158,7 +158,7 @@ func _physics_process(delta):
 					if guide_timer > 0.5:
 						
 						bird = Bird.instance()
-						bird.global_position = global_position
+						bird.get_node("Bird").global_position = global_position
 						get_parent().add_child(bird)
 						birddead = false
 						get_node("../Camera2D").shake(0.3)
@@ -168,18 +168,18 @@ func _physics_process(delta):
 					motion.x = 0
 					if birddead == false:
 						if Input.is_action_pressed(RIGHT):
-							bird.rotation_dir = 1
+							bird.get_node("Bird").rotation_dir = 1
 						elif Input.is_action_pressed(LEFT):
-							bird.rotation_dir = -1
+							bird.get_node("Bird").rotation_dir = -1
 						else:
-							bird.rotation_dir = 0
+							bird.get_node("Bird").rotation_dir = 0
 			else:
 				if guiding == true:
 					guide_timer =0
 					guiding = false
 					post_guiding = false
 					if birddead == false:
-						bird.rotation_dir = 0
+						bird.get_node("Bird").rotation_dir = 0
 		floor_timer = 0;
 	
 	floor_timer += delta

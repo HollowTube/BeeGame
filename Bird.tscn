@@ -1,24 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Bird.gd" type="Script" id=1]
-[ext_resource path="res://assets/borb.png" type="Texture" id=2]
+[ext_resource path="res://Line2D.gd" type="Script" id=1]
+[ext_resource path="res://Bird.gd" type="Script" id=2]
+[ext_resource path="res://assets/borb.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0, 0, 0, 0, 0.184314, 0.466667, 0.690196, 0.729412 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 5.89677 )
 
-[node name="Bird" type="Node2D"]
-rotation = -1.5708
+[node name="Node" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 2.0
+default_color = Color( 0.4, 0.501961, 1, 1 )
+gradient = SubResource( 2 )
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="Bird" type="Node2D" parent="."]
+rotation = -1.5708
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Bird"]
+texture = ExtResource( 3 )
 flip_v = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="Bird"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird/Area2D"]
 shape = SubResource( 1 )
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Bird"]
+[connection signal="body_entered" from="Bird/Area2D" to="Bird" method="_on_Area2D_body_entered"]
+[connection signal="screen_exited" from="Bird/VisibilityNotifier2D" to="Bird" method="_on_VisibilityNotifier2D_screen_exited"]
