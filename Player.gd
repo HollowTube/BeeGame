@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+
+var Bird = preload("res://Bird.tscn")
 var Bees = preload("res://Bees.tscn")
 var Bullet = preload("res://Bullet.tscn")
 var LandingDust = preload("res://LandingDust.tscn")
@@ -8,6 +10,8 @@ var air = false
 
 var timer = Timer.new()
 var timer2 = Timer.new()
+
+var guide_timer = 0
 
 var deathPosX
 var deathPosY
@@ -19,10 +23,13 @@ var UP
 var RIGHT
 var LEFT
 var DOWN
+var bird
 var floor_timer = 0;
 var dead = false
 var dashing = false;
 var post_dashing = false;
+var guiding = false;
+var post_guiding = false;
 var dash_timer = 0;
 var state = ""
 
@@ -76,7 +83,6 @@ func spawn_bullet():
 	b.direction = "right"
 	b.player_number = player_number
 	get_parent().add_child(b)
-
 
 func _physics_process(delta):
 	
@@ -132,8 +138,39 @@ func _physics_process(delta):
 				if state == "walk":
 					$AnimationPlayer.play("idle")
 
-		
-	
+		if player_number == 2:
+			if Input.is_action_pressed(DOWN):
+				if guiding == false:
+					guiding = true
+					$AnimationPlayer.play("charging")
+				elif post_guiding == false:
+					motion.x = 0
+					guide_timer += delta
+					
+					if guide_timer > 0.5:
+						
+						bird = Bird.instance()
+						bird.global_position = global_position
+						get_parent().add_child(bird)
+						
+						post_guiding = true
+				elif post_guiding == true:
+					$AnimationPlayer.play("slam_fall")
+					motion.x = 0
+					if is_instance_valid(bird):
+						if Input.is_action_pressed(RIGHT):
+							bird.rotation_dir = 1
+						elif Input.is_action_pressed(LEFT):
+							bird.rotation_dir = -1
+						else:
+							bird.rotation_dir = 0
+			else:
+				if guiding == true:
+					guide_timer =0
+					guiding = false
+					post_guiding = false
+					if is_instance_valid(bird):
+						bird.rotation_dir = 0
 		floor_timer = 0;
 	
 	floor_timer += delta
@@ -173,7 +210,7 @@ func _physics_process(delta):
 			$AnimationPlayer.play("falling")
 			state = "endfall"
 			
-		if Input.is_action_pressed(DOWN):
+		if Input.is_action_pressed(DOWN) and player_number ==1:
 			dashing = true
 		
 		if dashing == true:
