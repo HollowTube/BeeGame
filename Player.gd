@@ -263,10 +263,14 @@ func die():
 	
 	dead = true
 	
-	var b = load("res://vn2.tscn").instance()
-	get_parent().get_parent().get_node("CanvasLayer").add_child(b)
-	get_tree().paused = true
-	
+	if player_number == 1:
+		var b = load("res://vn2.tscn").instance()
+		get_parent().get_parent().get_node("CanvasLayer").add_child(b)
+		get_tree().paused = true
+	if player_number == 2:
+		var b = load("res://vn2bird.tscn").instance()
+		get_parent().get_parent().get_node("CanvasLayer").add_child(b)
+		get_tree().paused = true
 	
 	#Engine.time_scale = 0.1
 	#while(timer2.time_left!=0):
