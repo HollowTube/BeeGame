@@ -29,8 +29,9 @@ func _process(delta):
 	
 	if zooming:
 		smoothZoom = lerp(smoothZoom,0.2, 5* delta)
-		posX = lerp(posX,target_x, 10 * delta)
-		posY = lerp(posY,target_y, 10 * delta)
+		var zoom = clamp(smoothZoom, 0.5, 2.0)
+		posX = clamp(lerp(posX,target_x, 10 * delta),0,512)
+		posY = clamp(lerp(posY,target_y, 10 * delta),0,300)
 		self.zoom = Vector2(smoothZoom,smoothZoom)
 		self.position = Vector2(posX,posY)
 	
@@ -42,7 +43,7 @@ func _timeout():
 	zooming = false
 	if shaking:
 		shaking = false
-		print("stop shaking")
+		self.position = Vector2(default_x,default_y)
 		
 	
 func zoomIn(pos):

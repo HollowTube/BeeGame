@@ -204,6 +204,34 @@ shape = SubResource( 2 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, 102 )
 
+[node name="Floor9" type="StaticBody2D" parent="."]
+position = Vector2( -30, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor9"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Floor9"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor10" type="StaticBody2D" parent="."]
+position = Vector2( 540, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor10"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Floor10"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
 [node name="Floor5" type="StaticBody2D" parent="."]
 position = Vector2( 288, 256 )
 __meta__ = {
@@ -311,12 +339,29 @@ current = true
 script = ExtResource( 6 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 256, 112 )
+position = Vector2( 255.226, 104 )
+scale = Vector2( 0.992187, 0.993333 )
 z_index = -1
 texture = ExtResource( 7 )
 
+[node name="background3" type="Sprite" parent="."]
+position = Vector2( -205.967, 102.535 )
+scale = Vector2( 0.992187, 0.993333 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="background2" type="Sprite" parent="."]
+position = Vector2( 617.719, 103.679 )
+scale = Vector2( 0.992187, 0.993333 )
+z_index = -1
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="background_fronttrees" type="Sprite" parent="."]
-position = Vector2( 256, 112 )
+position = Vector2( 256, 108.5 )
+scale = Vector2( 1, 1.02333 )
 z_index = -1
 texture = ExtResource( 8 )
 
