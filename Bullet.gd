@@ -22,10 +22,10 @@ func _ready():
 
 func _physics_process(delta):
 	if direction =="left":
-		global_position.x = global_position.x - 300*delta
+		global_position.x = global_position.x - 350*delta
 		
 	if direction == "right":
-		global_position.x = global_position.x + 300*delta
+		global_position.x = global_position.x + 350*delta
 		$Sprite.set_flip_h(true)
 
 
@@ -39,5 +39,5 @@ func _on_Area2D_body_entered(body):
 		body.die()
 
 
-func _on_VisibilityNotifier2D_screen_exited():
+func _on_VisibilityNotifier2D_viewport_exited(viewport):
 	queue_free()

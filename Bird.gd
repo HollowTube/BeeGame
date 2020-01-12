@@ -37,6 +37,6 @@ func _on_Area2D_body_entered(body):
 		body.die()
 
 
-func _on_VisibilaityNotifier2D_screen_exited():
-	get_owner().birddead = true
-	queue_free()
+func _on_VisibilityNotifier2D_viewport_exited(viewport):
+	get_parent().get_parent().get_node("Player2").birddead = true
+	get_parent().queue_free()
