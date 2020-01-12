@@ -50,8 +50,8 @@ func spawn_laserunits():
 	get_parent().add_child(l)
 	if armed:
 		l.armed = true
-	l.position.x = x_ini + rand_range(-40, 40)
-	l.position.y = y_ini + rand_range(-40, 40)
+	l.position.x = x_ini + rand_range(-30, 30)
+	l.position.y = y_ini + rand_range(-30, 30)
 	l.x_vel = x_vel
 	l.y_vel = y_vel
 	l.ready = ready
