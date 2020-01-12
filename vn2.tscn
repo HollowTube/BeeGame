@@ -66,7 +66,7 @@ margin_bottom = 136.0
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
 script = ExtResource( 8 )
-scene_to_load = "res://game.tscn"
+scene_to_load = "res://Game.tscn"
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 margin_left = 352.0
