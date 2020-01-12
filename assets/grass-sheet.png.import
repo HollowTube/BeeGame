@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/char2_sheet.png-70f0676741d38b10fc62b3a9cbd961fb.stex"
+path="res://.import/grass-sheet.png-bcd9cfcd0a41e40f3a0094d6bb285d6a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/char2_sheet.png"
-dest_files=[ "res://.import/char2_sheet.png-70f0676741d38b10fc62b3a9cbd961fb.stex" ]
+source_file="res://assets/grass-sheet.png"
+dest_files=[ "res://.import/grass-sheet.png-bcd9cfcd0a41e40f3a0094d6bb285d6a.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

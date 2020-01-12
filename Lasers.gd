@@ -40,6 +40,7 @@ func _on_timer_timeout():
 		armed = true
 		warning = false
 		timer.start(1.25) #shooting duration
+		get_node("../Camera2D").shake(1.25)
 		laserunits.start(0.01)
 	else:
 		queue_free()

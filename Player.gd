@@ -18,6 +18,9 @@ var deathPosY
 
 export var player_number = 1
 
+var birddead = true
+
+
 var motion = Vector2()
 var UP
 var RIGHT
@@ -52,6 +55,10 @@ func _ready():
 	add_child(timer) #to process
 	add_child(timer2)
 	timer.start(0.05) #to start
+
+
+	if player_number == 2:
+	 	$Sprite.texture = preload("res://assets/char2_sheet.png")
 
 
 func foo():
@@ -106,7 +113,7 @@ func _physics_process(delta):
 			dash_timer = 0
 			post_dashing = true
 			spawn_bullet()
-			get_node("../Camera2D").shake()
+			get_node("../Camera2D").shake(0.3)
 			dashing = false
 			dash_timer = 0
 			$AnimationPlayer.play("slam")
@@ -153,12 +160,13 @@ func _physics_process(delta):
 						bird = Bird.instance()
 						bird.global_position = global_position
 						get_parent().add_child(bird)
-						
+						birddead = false
+						get_node("../Camera2D").shake(0.3)
 						post_guiding = true
 				elif post_guiding == true:
 					$AnimationPlayer.play("slam_fall")
 					motion.x = 0
-					if is_instance_valid(bird):
+					if birddead == false:
 						if Input.is_action_pressed(RIGHT):
 							bird.rotation_dir = 1
 						elif Input.is_action_pressed(LEFT):
@@ -170,7 +178,7 @@ func _physics_process(delta):
 					guide_timer =0
 					guiding = false
 					post_guiding = false
-					if is_instance_valid(bird):
+					if birddead == false:
 						bird.rotation_dir = 0
 		floor_timer = 0;
 	
