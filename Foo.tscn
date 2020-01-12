@@ -1,0 +1,463 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/platform.png" type="Texture" id=3]
+[ext_resource path="res://assets/ground.png" type="Texture" id=4]
+[ext_resource path="res://CameraController.gd" type="Script" id=5]
+[ext_resource path="res://assets/background.png" type="Texture" id=6]
+[ext_resource path="res://background.gd" type="Script" id=7]
+[ext_resource path="res://assets/background_fronttrees.png" type="Texture" id=8]
+[ext_resource path="res://background_fronttrees.gd" type="Script" id=9]
+[ext_resource path="res://ambient.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Grass.tscn" type="PackedScene" id=11]
+[ext_resource path="res://vn1.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.3974, 4.49124 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.9999, 6.10352e-005 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="Game" type="Node"]
+
+[node name="World" type="Node2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 1 )
+
+[node name="Player" parent="World" instance=ExtResource( 2 )]
+pause_mode = 2
+position = Vector2( 64, 183 )
+rotation = -0.0026748
+z_index = 0
+
+[node name="Player2" parent="World" instance=ExtResource( 2 )]
+pause_mode = 2
+position = Vector2( 448, 183 )
+rotation = -0.0026748
+z_index = 0
+player_number = 2
+
+[node name="platform" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 64, 192 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform7" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 80, 96 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform7"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform7"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform2" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 256, 192 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform2"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform2"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform6" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 256, 96 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform6"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform6"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform3" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 448, 192 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform3"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform3"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform8" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 432, 96 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform8"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform8"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform4" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 160, 144 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform4"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform4"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform10" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 176, 48 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform10"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform10"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform5" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 352, 144 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform5"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform5"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="platform9" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 336, 48 )
+rotation = -0.0026748
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World/platform9"]
+position = Vector2( 0, 0.331709 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/platform9"]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Floor" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 32, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor9" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( -30, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor9"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor9"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor10" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 540, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor10"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor10"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor5" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 288, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor5"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor5"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor3" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 160, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor3"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor3"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor8" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 416, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor8"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor8"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor2" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 96, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor2"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor2"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor6" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 352, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor6"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor6"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor4" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 224, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor4"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor4"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Floor7" type="StaticBody2D" parent="World"]
+editor/display_folded = true
+position = Vector2( 480, 256 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Floor7"]
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="World/Floor7"]
+texture = ExtResource( 4 )
+offset = Vector2( 0, 102 )
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+pause_mode = 2
+position = Vector2( 256, 150 )
+current = true
+script = ExtResource( 5 )
+
+[node name="background" type="Sprite" parent="World"]
+position = Vector2( 255.226, 90 )
+scale = Vector2( 1.2, 1.2 )
+z_index = -3
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+
+[node name="background3" type="Sprite" parent="World"]
+visible = false
+position = Vector2( -205.967, 102.535 )
+scale = Vector2( 0.992187, 0.993333 )
+z_index = -3
+texture = ExtResource( 6 )
+
+[node name="background2" type="Sprite" parent="World"]
+visible = false
+position = Vector2( 617.719, 103.679 )
+scale = Vector2( 0.992187, 0.993333 )
+z_index = -3
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="background_fronttrees" type="Sprite" parent="World"]
+position = Vector2( 256, 108.5 )
+scale = Vector2( 1, 1.02333 )
+z_index = -3
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+
+[node name="Node2D" parent="World" instance=ExtResource( 10 )]
+
+[node name="grass" type="StaticBody2D" parent="World"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/grass"]
+shape = SubResource( 3 )
+disabled = true
+
+[node name="grass1" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 120, 246.277 )
+
+[node name="grass2" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 304, 246.277 )
+
+[node name="grass3" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 257.005, 246.277 )
+
+[node name="grass4" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 238.612, 246.277 )
+
+[node name="grass5" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 348.689, 45.8416 )
+
+[node name="grass6" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 144, 142.402 )
+
+[node name="grass7" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 400, 246.277 )
+
+[node name="grass8" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 492.553, 246.277 )
+
+[node name="grass9" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 433.544, 92.6585 )
+
+[node name="grass10" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 72, 92.6585 )
+
+[node name="grass11" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 72, 246.277 )
+
+[node name="grass12" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 176, 142.402 )
+
+[node name="grass13" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 336.774, 142.402 )
+
+[node name="grass14" parent="World/grass" instance=ExtResource( 11 )]
+position = Vector2( 175.094, 45.8416 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="beginning" parent="CanvasLayer" instance=ExtResource( 12 )]
