@@ -58,11 +58,12 @@ alignment = 1
 [node name="startbtn" type="TextureButton" parent="menu/buttons"]
 margin_top = 26.0
 margin_right = 470.0
-margin_bottom = 48.0
-texture_normal = ExtResource( 6 )
-texture_hover = ExtResource( 7 )
-script = ExtResource( 8 )
-scene_to_load = "res://game.tscn"
+
+margin_bottom = 92.0
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+script = ExtResource( 7 )
+scene_to_load = "res://Game.tscn"
 
 [node name="quitbtn" type="TextureButton" parent="menu/buttons"]
 margin_top = 66.0

@@ -19,7 +19,7 @@ func _input(event):
 			get_parent().get_parent().add_child(b)
 			get_parent().queue_free()
 		elif (get_name() == "vn1part2"):
-			var b = load("res://hazards.tscn").instance()
+			var b = load("res://Hazards.tscn").instance()
 			get_parent().get_parent().get_parent().get_node("World/Player").start = true
 			get_parent().get_parent().get_parent().get_node("World/Player2").start = true
 			get_parent().get_parent().get_parent().get_node("World").add_child(b)

@@ -19,4 +19,10 @@ func _on_button_pressed(scene_to_load):
 func _on_quit_pressed():
 	get_tree().quit()
 	
-	
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		load("res://Game.tscn")
+		get_tree().change_scene("res://Game.tscn")
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+		
