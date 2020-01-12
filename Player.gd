@@ -38,6 +38,7 @@ var state = ""
 
 var player
 var bgPlayer
+var grassPlayer
 
 func _ready():
 	
@@ -54,14 +55,15 @@ func _ready():
 		
 	player = AudioStreamPlayer.new()
 	bgPlayer = AudioStreamPlayer.new()
-	
+	grassPlayer = AudioStreamPlayer.new()
 
 	
 	add_child(player)
 	add_child(bgPlayer)
+	add_child(grassPlayer)
 	
 	bgPlayer.stream = load("res://FlightOfTheBumbleBee.wav")
-	bgPlayer.volume_db = -8
+	bgPlayer.volume_db = -20
 	bgPlayer.play()
 
 	timer.connect("timeout",self,"_on_timer_timeout")
@@ -181,18 +183,23 @@ func _physics_process(delta):
 						motion.x = 0
 						guide_timer += delta
 						
-						if guide_timer > 0.5:
-							
+						if guide_timer > 0.5:				
+
 							spawn_dust("explosionbird")
 							bird = Bird.instance()
 							bird.get_node("Bird").global_position = global_position
 							get_parent().add_child(bird)
 							birddead = false
 							get_node("../Camera2D").shake(0.3)
+
 							for i in range(1, 15):
 								get_node("../grass/grass" + str(i)).play_grass(global_position)
 							
 							post_guiding = true
+							
+							player.stream = load("res://crow.wav")
+							player.volume_db = -10
+							player.play(0.5)
 					elif post_guiding == true:
 						$AnimationPlayer.play("slam_fall")
 						motion.x = 0
@@ -214,19 +221,16 @@ func _physics_process(delta):
 		
 		floor_timer += delta
 		
-		if floor_timer < 0.1:
-		
-				
+		if floor_timer < 0.1:			
 			if Input.is_action_pressed(UP):
-				player.stream = load("res://grassy1.wav")
-				player.volume_db = -10
-				player.play(0.015)
+				grassPlayer.stream = load("res://grassy1.wav")
+				grassPlayer.volume_db = -10
+				grassPlayer.pitch_scale = 1+ randf()/2 -0.25
+				#player.pitch_scale = player.pitch_scale + randi()%100 - 50
+				grassPlayer.play(0.015)
+				#player.pitch_scale = 1
 				motion.y = -230
 				$AnimationPlayer.play("jump")
-	
-				
-	
-					
 			
 		else:
 			air = true
@@ -291,12 +295,3 @@ func die():
 	var b = load("res://vn2.tscn").instance()
 	get_parent().get_parent().get_node("CanvasLayer").add_child(b)
 	get_tree().paused = true
-	
-	
-	#Engine.time_scale = 0.1
-	#while(timer2.time_left!=0):
-	#	print(timer2.time_left)
-	#	global_position.x = global_position.x + randi()%2-0.5
-	#	global_position.y = global_position.y + randi()%2-0.5
-	#print(get_node("Sprite"))
-	#get_tree().reload_current_scene()
