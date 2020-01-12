@@ -3,7 +3,7 @@
 [ext_resource path="res://response_text.gd" type="Script" id=1]
 [ext_resource path="res://fonts/pixelmix.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://text_scroll.gd" type="Script" id=3]
-[ext_resource path="res://assets/char1_portrait1.png" type="Texture" id=4]
+[ext_resource path="res://assets/char2_portrait1.png" type="Texture" id=4]
 [ext_resource path="res://vn.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -38,11 +38,11 @@ text = "text goes here
 script = ExtResource( 3 )
 
 [node name="anime character" type="TextureRect" parent="."]
-margin_left = 392.0
-margin_top = 3.8147e-006
-margin_right = 725.0
+margin_left = 512.0
+margin_top = -9.09495e-013
+margin_right = 845.0
 margin_bottom = 333.0
-rect_scale = Vector2( 0.36, 0.36 )
+rect_scale = Vector2( -0.36, 0.36 )
 texture = ExtResource( 4 )
 stretch_mode = 5
 
