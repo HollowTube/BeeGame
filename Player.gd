@@ -292,6 +292,19 @@ func die():
 	
 	dead = true
 	
-	var b = load("res://vn2.tscn").instance()
-	get_parent().get_parent().get_node("CanvasLayer").add_child(b)
-	get_tree().paused = true
+	if player_number == 1:
+		var b = load("res://vn2.tscn").instance()
+		get_parent().get_parent().get_node("CanvasLayer").add_child(b)
+		get_tree().paused = true
+	if player_number == 2:
+		var b = load("res://vn2bird.tscn").instance()
+		get_parent().get_parent().get_node("CanvasLayer").add_child(b)
+		get_tree().paused = true
+	
+	#Engine.time_scale = 0.1
+	#while(timer2.time_left!=0):
+	#	print(timer2.time_left)
+	#	global_position.x = global_position.x + randi()%2-0.5
+	#	global_position.y = global_position.y + randi()%2-0.5
+	#print(get_node("Sprite"))
+	#get_tree().reload_current_scene()

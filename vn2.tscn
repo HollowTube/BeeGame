@@ -3,7 +3,7 @@
 [ext_resource path="res://end_text.gd" type="Script" id=1]
 [ext_resource path="res://fonts/pixelmix.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://text_scroll.gd" type="Script" id=3]
-[ext_resource path="res://81765902_577491892889208_7263812041486368768_n.png" type="Texture" id=4]
+[ext_resource path="res://assets/char1_portrait2.png" type="Texture" id=4]
 [ext_resource path="res://vn.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -28,10 +28,10 @@ size_flags_vertical = 3
 color = Color( 0.152941, 0.129412, 0.129412, 0.901961 )
 
 [node name="text" type="RichTextLabel" parent="."]
-margin_left = 30.0
-margin_top = 20.0
-margin_right = 380.0
-margin_bottom = 90.0
+margin_left = 136.0
+margin_top = 24.0
+margin_right = 486.0
+margin_bottom = 94.0
 custom_fonts/normal_font = SubResource( 1 )
 visible_characters = 0
 percent_visible = 0.0
@@ -40,10 +40,11 @@ text = "text goes here
 script = ExtResource( 3 )
 
 [node name="anime character" type="TextureRect" parent="."]
-margin_left = 320.0
-margin_top = -30.0
-margin_right = 520.0
-margin_bottom = 170.0
+margin_left = 120.0
+margin_top = -1.13687e-013
+margin_right = 453.0
+margin_bottom = 333.0
+rect_scale = Vector2( -0.36, 0.36 )
 texture = ExtResource( 4 )
 stretch_mode = 5
 
