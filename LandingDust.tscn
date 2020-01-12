@@ -19,6 +19,7 @@ tracks/0/keys = {
 }
 
 [node name="LandingDust" type="Node2D"]
+z_index = -1
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

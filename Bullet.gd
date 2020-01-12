@@ -3,6 +3,7 @@ extends Node2D
 var armed = false
 var player_number = 0
 var direction = "left"
+var fading = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +28,12 @@ func _physics_process(delta):
 	if direction == "right":
 		global_position.x = global_position.x + 350*delta
 		$Sprite.set_flip_h(true)
+	
+	if fading == true:
+		get_parent().get_node("BeeLine").modulate.a -= 0.05
+	
+	if get_parent().get_node("BeeLine").modulate.a <0:
+		get_parent().queue_free()
 
 
 func _on_timer_timeout():
@@ -40,4 +47,6 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_VisibilityNotifier2D_viewport_exited(viewport):
-	queue_free()
+	fading = true
+
+

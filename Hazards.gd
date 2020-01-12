@@ -5,6 +5,7 @@ extends Node2D
 # var b = "text"
 var Lasers = preload("res://Lasers.tscn")
 var timer = Timer.new()
+var counter = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,5 +46,11 @@ func spawn_laser():
 	l.get_node("Sprite").rotate(atan(l.y_vel/l.x_vel))
 	
 func _on_timer_timeout():
-	spawn_laser()
-	timer.start(6)
+	counter += 1
+	
+	for i in range(1, (counter-5) / 3): 
+		spawn_laser()
+	
+	timer.start(6/((counter*0.08)))
+	
+	

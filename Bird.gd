@@ -6,6 +6,7 @@ var armed = false
 var speed = 3
 var rotation_speed = 4
 var rotation_dir = 0
+var fading = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,6 +27,13 @@ func _physics_process(delta):
 	velocity = Vector2(speed, 0).rotated(rotation)
 	rotation += rotation_dir * rotation_speed * delta
 	global_position += velocity
+	
+	if fading == true:
+		get_parent().get_node("Line2D").modulate.a -= 0.05
+	
+	if get_parent().get_node("Line2D").modulate.a <0:
+		get_parent().queue_free()
+		
 
 func _on_timer_timeout():
    armed = true
@@ -39,4 +47,6 @@ func _on_Area2D_body_entered(body):
 
 func _on_VisibilityNotifier2D_viewport_exited(viewport):
 	get_parent().get_parent().get_node("Player2").birddead = true
-	get_parent().queue_free()
+	fading = true
+
+

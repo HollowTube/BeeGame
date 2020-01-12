@@ -23,7 +23,7 @@ var laserunits = Timer.new()
 func _ready():
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer) #to process
-	timer.start(1) #warning duration
+	timer.start(1.5) #warning duration
 	laserunits.connect("timeout",self,"_on_laserunits_timeout") 
 	add_child(laserunits) #to process
 	
@@ -40,8 +40,8 @@ func _on_timer_timeout():
 		armed = true
 		warning = false
 		timer.start(1.25) #shooting duration
-		get_node("../Camera2D").shake(1.25)
-		laserunits.start(0.01)
+		get_parent().get_node("Camera2D").shake(1.25)
+		laserunits.start(0.02)
 	else:
 		queue_free()
 	
@@ -58,4 +58,4 @@ func spawn_laserunits():
 
 func _on_laserunits_timeout():
 	spawn_laserunits()
-	laserunits.start(0.01)
+	laserunits.start(0.02)

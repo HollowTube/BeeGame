@@ -45,4 +45,5 @@ func _on_timer_timeout():
 
 func _on_Area2D_body_entered(body):
 	if armed == true and (body.get_name() == "Player" or body.get_name() == "Player2"):
+		pass
 		body.die()

@@ -5,7 +5,8 @@
 [ext_resource path="res://assets/borb.png" type="Texture" id=3]
 
 [sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 0, 0, 0, 0, 0.184314, 0.466667, 0.690196, 0.729412 )
+offsets = PoolRealArray( 0, 0.609272, 0.880795, 0.89404, 0.993378 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.0862588, 0.2184, 0.323011, 0.341364, 0.0821921, 0.208103, 0.307783, 0.32527, 0.0891054, 0.225607, 0.333671, 0.35263, 0.184314, 0.466667, 0.690196, 0.729412 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 5.89677 )
@@ -34,5 +35,4 @@ shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Bird"]
 [connection signal="body_entered" from="Bird/Area2D" to="Bird" method="_on_Area2D_body_entered"]
-[connection signal="screen_exited" from="Bird/VisibilityNotifier2D" to="Bird" method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="viewport_exited" from="Bird/VisibilityNotifier2D" to="Bird" method="_on_VisibilityNotifier2D_viewport_exited"]

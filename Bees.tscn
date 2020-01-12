@@ -10,6 +10,7 @@ radius = 33.724
 extents = Vector2( 3.06182, 3.03841 )
 
 [node name="Bees" type="Node2D"]
+z_index = -1
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

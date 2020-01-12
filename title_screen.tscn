@@ -48,7 +48,7 @@ margin_bottom = 92.0
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
 script = ExtResource( 5 )
-scene_to_load = "res://World.tscn"
+scene_to_load = "res://world.tscn"
 
 [node name="quitbtn" type="TextureButton" parent="menu/center_row/buttons"]
 margin_top = 96.0

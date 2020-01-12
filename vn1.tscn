@@ -1,29 +1,22 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://start_text.gd" type="Script" id=1]
-[ext_resource path="res://assets/background.png" type="Texture" id=2]
-[ext_resource path="res://fonts/pixelmix.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://text_scroll.gd" type="Script" id=4]
-[ext_resource path="res://81765902_577491892889208_7263812041486368768_n.png" type="Texture" id=5]
-[ext_resource path="res://vn.gd" type="Script" id=6]
+[ext_resource path="res://fonts/pixelmix.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://text_scroll.gd" type="Script" id=3]
+[ext_resource path="res://81765902_577491892889208_7263812041486368768_n.png" type="Texture" id=4]
+[ext_resource path="res://vn.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 3 )
+font_data = ExtResource( 2 )
 
 [node name="beginning" type="Node"]
 script = ExtResource( 1 )
 file_path = "res://dialogue/text_start.txt"
 
-[node name="bg" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 2 )
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 180.0
+margin_bottom = -180.0
 alignment = 2
 
 [node name="textbox" type="ColorRect" parent="VBoxContainer"]
@@ -31,29 +24,29 @@ margin_right = 512.0
 margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0.152941, 0.129412, 0.129412, 1 )
+color = Color( 0.152941, 0.129412, 0.129412, 0.901961 )
 
 [node name="text" type="RichTextLabel" parent="."]
-margin_left = 20.0
-margin_top = 200.0
-margin_right = 370.0
-margin_bottom = 270.0
+margin_left = 32.0
+margin_top = 24.0
+margin_right = 382.0
+margin_bottom = 94.0
 custom_fonts/normal_font = SubResource( 1 )
 visible_characters = 0
 percent_visible = 0.0
 text = "text goes here 
 "
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="anime character" type="TextureRect" parent="."]
-margin_left = 320.0
-margin_top = 100.0
-margin_right = 520.0
-margin_bottom = 300.0
-texture = ExtResource( 5 )
+margin_left = 336.0
+margin_top = -32.0
+margin_right = 536.0
+margin_bottom = 168.0
+texture = ExtResource( 4 )
 stretch_mode = 5
 
 [node name="vn1" type="TextureButton" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 6 )
+script = ExtResource( 5 )

@@ -31,7 +31,7 @@ func _process(delta):
 		smoothZoom = lerp(smoothZoom,0.2, 5* delta)
 		var zoom = clamp(smoothZoom, 0.5, 2.0)
 		posX = clamp(lerp(posX,target_x, 10 * delta),0,512)
-		posY = clamp(lerp(posY,target_y, 10 * delta),0,300)
+		posY = clamp(lerp(posY,target_y - 10, 10 * delta),0,300)
 		self.zoom = Vector2(smoothZoom,smoothZoom)
 		self.position = Vector2(posX,posY)
 	

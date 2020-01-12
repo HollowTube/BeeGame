@@ -43,3 +43,10 @@ func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
 				else:
 					get_node("Sprite").set_flip_h(true)
 			$AnimationPlayer.play("grass")
+			
+func play_grass(x):
+	if global_position > x:
+		get_node("Sprite").set_flip_h(false)
+	else:
+		get_node("Sprite").set_flip_h(true)
+	$AnimationPlayer.play("grass")
