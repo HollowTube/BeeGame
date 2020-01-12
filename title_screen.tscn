@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://title_screen.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://fonts/startgame.png" type="Texture" id=3]
-[ext_resource path="res://fonts/startgamehover.png" type="Texture" id=4]
-[ext_resource path="res://buttons/menubtn2.gd" type="Script" id=5]
-[ext_resource path="res://fonts/quitgame.png" type="Texture" id=6]
-[ext_resource path="res://fonts/quitgamehover.png" type="Texture" id=7]
-[ext_resource path="res://buttons/quitbtn.gd" type="Script" id=8]
+[ext_resource path="res://assets/background.png" type="Texture" id=3]
+[ext_resource path="res://assets/background_fronttrees.png" type="Texture" id=4]
+[ext_resource path="res://fonts/startgame.png" type="Texture" id=5]
+[ext_resource path="res://fonts/startgamehover.png" type="Texture" id=6]
+[ext_resource path="res://buttons/menubtn2.gd" type="Script" id=7]
+[ext_resource path="res://fonts/quitgame.png" type="Texture" id=8]
+[ext_resource path="res://fonts/quitgamehover.png" type="Texture" id=9]
+[ext_resource path="res://buttons/quitbtn.gd" type="Script" id=10]
 
 [node name="title screen" type="Control"]
 anchor_right = 1.0
@@ -25,6 +27,16 @@ margin_right = 470.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 stretch_mode = 4
+
+[node name="background" type="Sprite" parent="menu/game logo"]
+position = Vector2( 236, 140 )
+scale = Vector2( 1.0625, 1.08667 )
+texture = ExtResource( 3 )
+
+[node name="background_fronttrees" type="Sprite" parent="menu/game logo/background"]
+position = Vector2( 1.52588e-005, -0.460114 )
+scale = Vector2( 1.05882, 1.08282 )
+texture = ExtResource( 4 )
 
 [node name="center_row" type="HBoxContainer" parent="menu"]
 margin_top = 68.0
@@ -45,15 +57,15 @@ alignment = 1
 margin_top = 70.0
 margin_right = 470.0
 margin_bottom = 92.0
-texture_normal = ExtResource( 3 )
-texture_hover = ExtResource( 4 )
-script = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+script = ExtResource( 7 )
 scene_to_load = "res://game.tscn"
 
 [node name="quitbtn" type="TextureButton" parent="menu/center_row/buttons"]
 margin_top = 96.0
 margin_right = 470.0
 margin_bottom = 118.0
-texture_normal = ExtResource( 6 )
-texture_hover = ExtResource( 7 )
-script = ExtResource( 8 )
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+script = ExtResource( 10 )
