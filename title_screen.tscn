@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/title/cantgobeeak.png" type="Texture" id=5]
 [ext_resource path="res://fonts/startgame.png" type="Texture" id=6]
 [ext_resource path="res://fonts/startgamehover.png" type="Texture" id=7]
-[ext_resource path="res://buttons/menubtn2.gd" type="Script" id=8]
+[ext_resource path="res://menubtn.gd" type="Script" id=8]
 [ext_resource path="res://fonts/quitgame.png" type="Texture" id=9]
 [ext_resource path="res://fonts/quitgamehover.png" type="Texture" id=10]
 [ext_resource path="res://buttons/quitbtn.gd" type="Script" id=11]
@@ -47,28 +47,25 @@ texture = ExtResource( 5 )
 stretch_mode = 4
 
 [node name="buttons" type="VBoxContainer" parent="menu"]
-margin_top = 85.0
+margin_top = 100.0
 margin_right = 470.0
-margin_bottom = 185.0
+margin_bottom = 148.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 3
-size_flags_vertical = 3
 alignment = 1
 
 [node name="startbtn" type="TextureButton" parent="menu/buttons"]
-margin_top = 26.0
 margin_right = 470.0
-
-margin_bottom = 92.0
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
-script = ExtResource( 7 )
+margin_bottom = 22.0
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+script = ExtResource( 8 )
 scene_to_load = "res://Game.tscn"
 
 [node name="quitbtn" type="TextureButton" parent="menu/buttons"]
-margin_top = 66.0
+margin_top = 26.0
 margin_right = 470.0
-margin_bottom = 74.0
+margin_bottom = 48.0
 texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 10 )
 script = ExtResource( 11 )
