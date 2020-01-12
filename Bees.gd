@@ -6,6 +6,8 @@ var fading = false
 var timer = Timer.new()
 var randomnumber = randi()	
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -18,6 +20,9 @@ func _ready():
 	
 	if randi()%2 == 0:
 		$Sprite.set_flip_h(true)
+		
+	if player_number == 2:
+	 	$Sprite.texture = preload("res://assets/bord.png")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -50,5 +55,8 @@ func _on_ArmArea_body_exited(body):
 
 
 func _on_Area2D_body_entered(body):
-	if armed == true and (body.get_name() == "Player" or body.get_name() == "Player2"):
-		body.die()
+	if body.get_name() == "Player" or body.get_name() == "Player2":
+		if body.player_number != player_number:
+			body.die()
+		if armed == true and body.player_number == player_number:
+			body.die()
