@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/startgame.png-9553fec8fc95a132407d28318cd7d174.stex"
+path="res://.import/keybinds.png-042892cc68feac3d379526e2f83b93b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fonts/startgame.png"
-dest_files=[ "res://.import/startgame.png-9553fec8fc95a132407d28318cd7d174.stex" ]
+source_file="res://assets/menu/keybinds.png"
+dest_files=[ "res://.import/keybinds.png-042892cc68feac3d379526e2f83b93b8.stex" ]
 
 [params]
 

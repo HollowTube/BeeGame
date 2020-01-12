@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/startgame.png-9553fec8fc95a132407d28318cd7d174.stex"
+path="res://.import/without icons.png-c779da317a654ae79e588ccaf3dbc5a4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fonts/startgame.png"
-dest_files=[ "res://.import/startgame.png-9553fec8fc95a132407d28318cd7d174.stex" ]
+source_file="res://assets/menu/without icons.png"
+dest_files=[ "res://.import/without icons.png-c779da317a654ae79e588ccaf3dbc5a4.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
