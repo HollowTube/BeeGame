@@ -5,12 +5,8 @@ export(String) var file_path
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var rand_line = get_line_from_file(file_path)
-	var lines = rand_line.split(":")
-	var line1 = lines[0]
-	var line2 = lines[1]
-	$text.text = line1
-	$"/root/global".response = line2
-#	display_text(text)
+	print(rand_line)
+	$text.text = rand_line
 	
 func load_file(file_path):
 	var file = File.new()
