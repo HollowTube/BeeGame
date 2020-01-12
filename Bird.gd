@@ -35,5 +35,6 @@ func _on_Area2D_body_entered(body):
 		body.die()
 
 
-func _on_VisibilityNotifier2D_screen_exited():
+func _on_VisibilaityNotifier2D_screen_exited():
+	get_owner().birddead = true
 	queue_free()

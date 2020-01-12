@@ -36,14 +36,14 @@ func _process(delta):
 		self.position = Vector2(posX,posY)
 	
 	elif shaking:
-		var y = default_y + randi()%70-35
-		self.position = Vector2(default_x,y)
+		var y = rand_range(-7,7)
+		set_offset(Vector2(0,y))
 	
 func _timeout():
 	zooming = false
 	if shaking:
 		shaking = false
-		self.position = Vector2(default_x,default_y)
+		set_offset(Vector2(0,0))
 		
 	
 func zoomIn(pos):
@@ -53,8 +53,8 @@ func zoomIn(pos):
 	target_y = pos.y
 	zooming = true;
 	
-func shake():
-	timer.start(0.1)
+func shake(time):
+	timer.start(time)
 	shaking = true
 	
 func reset():
