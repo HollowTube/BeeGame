@@ -36,6 +36,9 @@ var post_guiding = false;
 var dash_timer = 0;
 var state = ""
 
+var player
+var bgPlayer
+
 func _ready():
 	
 	if player_number == 2 :
@@ -48,7 +51,18 @@ func _ready():
 		RIGHT = "ui_right_2"
 		DOWN = "ui_down_2"
 		LEFT = "ui_left_2"
+		
+	player = AudioStreamPlayer.new()
+	bgPlayer = AudioStreamPlayer.new()
+	
 
+	
+	add_child(player)
+	add_child(bgPlayer)
+	
+	bgPlayer.stream = load("res://FlightOfTheBumbleBee.wav")
+	bgPlayer.volume_db = -8
+	bgPlayer.play()
 
 	timer.connect("timeout",self,"_on_timer_timeout")
 	add_child(timer) #to process
@@ -107,6 +121,7 @@ func _physics_process(delta):
 		if is_on_floor():
 		
 			if air == true:
+				
 				spawn_dust("normal")
 		
 			air = false
@@ -115,6 +130,11 @@ func _physics_process(delta):
 				dash_timer = 0
 				post_dashing = true
 				spawn_bullet()
+				
+				player.stream = load("res://explosion1.wav")
+				player.volume_db = -10
+				player.play()
+				
 				get_node("../Camera2D").shake(0.3)
 				for i in range(1, 15):
 					get_node("../grass/grass" + str(i)).play_grass(global_position)
@@ -198,7 +218,9 @@ func _physics_process(delta):
 		
 				
 			if Input.is_action_pressed(UP):
-				
+				player.stream = load("res://grassy1.wav")
+				player.volume_db = -10
+				player.play(0.015)
 				motion.y = -230
 				$AnimationPlayer.play("jump")
 	
@@ -259,6 +281,9 @@ func _on_timer_timeout():
 func die():
 	deathPosX = global_position.x
 	deathPosY = global_position.y
+	player.stream = load("res://wasted.wav")
+	player.volume_db = -10
+	player.play()
 	get_node("../Camera2D").zoomIn(global_position)
 	
 	dead = true
