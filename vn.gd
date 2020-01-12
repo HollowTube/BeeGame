@@ -25,7 +25,7 @@ func _input(event):
 			get_parent().get_parent().get_parent().get_node("World").add_child(b)
 			get_parent().queue_free()
 			
-		elif (get_name() == "vn2"):
+		elif (get_name() == "vn2" or get_name() == "vn2bird"):
 			get_tree().paused= false
 			get_tree().reload_current_scene()
 		

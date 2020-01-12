@@ -1,10 +1,9 @@
 extends Node
 
-export(String) var file_path
+var file_path = "res://dialogue/text_end_bird.txt"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	
 	var rand_line = get_line_from_file(file_path)
 	print(rand_line)
