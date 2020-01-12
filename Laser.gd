@@ -30,6 +30,7 @@ func _ready():
 	var scale = rand_range(1,5)
 	
 	self.set_scale(Vector2(scale, scale))
+	rotation_degrees = rand_range(0,180)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

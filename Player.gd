@@ -64,11 +64,13 @@ func _ready():
 func foo():
 	pass 
 
-func spawn_dust():
+func spawn_dust(cat):
     # "Muzzle" is a Position2D placed at the barrel of the gun.
 	var b = LandingDust.instance()
 	b.global_position = global_position
+	b.cat = cat
 	get_parent().add_child(b)
+	
 
 func spawn_bee():
     # "Muzzle" is a Position2D placed at the barrel of the gun.
@@ -105,7 +107,7 @@ func _physics_process(delta):
 		if is_on_floor():
 		
 			if air == true:
-				spawn_dust()
+				spawn_dust("normal")
 		
 			air = false
 		
@@ -119,6 +121,8 @@ func _physics_process(delta):
 				dashing = false
 				dash_timer = 0
 				$AnimationPlayer.play("slam")
+				spawn_dust("explosion")
+				
 			
 			elif post_dashing == true:
 				motion.x =0
@@ -159,6 +163,7 @@ func _physics_process(delta):
 						
 						if guide_timer > 0.5:
 							
+							spawn_dust("explosionbird")
 							bird = Bird.instance()
 							bird.get_node("Bird").global_position = global_position
 							get_parent().add_child(bird)
