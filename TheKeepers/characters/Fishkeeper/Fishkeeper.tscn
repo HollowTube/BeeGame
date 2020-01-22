@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/Fishkeeper/Fishkeeper.gd" type="Script" id=2]
+[ext_resource path="res://assets/char2_sheet.png" type="Texture" id=3]
+
+[node name="Fishkeeper" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+vframes = 8
+hframes = 8
+
+[node name="Grenades" type="Node" parent="." index="6"]

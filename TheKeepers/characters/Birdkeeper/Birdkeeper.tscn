@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/Birdkeeper/Birdkeeper.gd" type="Script" id=2]
+[ext_resource path="res://assets/char2_sheet.png" type="Texture" id=3]
+[ext_resource path="res://characters/Birdkeeper/OnFloor.gd" type="Script" id=4]
+[ext_resource path="res://characters/Birdkeeper/PreMissile.gd" type="Script" id=5]
+[ext_resource path="res://characters/Birdkeeper/MissileControl.gd" type="Script" id=6]
+
+[node name="Birdkeeper" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+vframes = 8
+hframes = 8
+
+[node name="OnFloor" parent="StateMachine" index="0"]
+script = ExtResource( 4 )
+
+[node name="PreMissile" type="Node" parent="StateMachine" index="3"]
+script = ExtResource( 5 )
+
+[node name="MissileControl" type="Node" parent="StateMachine" index="4"]
+script = ExtResource( 6 )
+
+[node name="Birds" type="Node" parent="." index="6"]
